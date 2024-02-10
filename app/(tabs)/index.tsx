@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Image, ImageSourcePropType, Pressable, StyleSheet } from 'react-native';
+import { Image, ImageSourcePropType, Pressable, ScrollView, StyleSheet } from 'react-native';
 import {AVPlaybackSource, Audio} from 'expo-av';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+import animals from '@/constants/animals';
 
 function AnimalCard({img, audio}: {img: ImageSourcePropType; audio: AVPlaybackSource;}){
   const [sound, setSound] = useState<Audio.Sound>();
@@ -11,7 +11,6 @@ function AnimalCard({img, audio}: {img: ImageSourcePropType; audio: AVPlaybackSo
   async function playSound() {
     const { sound } = await Audio.Sound.createAsync(audio);
     setSound(sound);
-
     await sound.playAsync();
   }
 
@@ -24,20 +23,36 @@ function AnimalCard({img, audio}: {img: ImageSourcePropType; audio: AVPlaybackSo
   }, [sound]);
 
   return (
-    <Pressable onPress={playSound} style={{height: 200, width: '100%'}}>
-      <Image source={img} style={{width: '100%', height: '100%'}} />
+    <Pressable onPress={playSound} style={{height: 200, width: '45%'}}>
+      <Image source={img} style={{width: '100%', height: '100%', objectFit: 'contain'}} />
     </Pressable>
   );
 }
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <AnimalCard img={require('@/assets/images/animals/turkey.jpg')} audio={require('@/assets/audio/animals/turkey.mp3')} />
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <ScrollView style={{
+      display: 'flex',
+      flex: 1,
+    }}>
+        <View style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+        }}>
+        {
+          animals.map((x,i)=>(
+            <AnimalCard
+              key={i}
+              img={x.img}
+              audio={x.audio}
+            />
+          ))
+        }
+      </View>
+    </ScrollView>
   );
 }
 

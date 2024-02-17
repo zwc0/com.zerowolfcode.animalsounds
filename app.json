@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "com.zerowolfcode.animalsounds",
-    "slug": "com.zerowolfcode.animalsounds",
+    "slug": "animalsounds",
     "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -17,7 +17,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.zerowolfcode.animalsounds"
+      "bundleIdentifier": "com.zerowolfcode.animalsounds2"
     },
     "android": {
       "adaptiveIcon": {
@@ -36,6 +36,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "34991bc9-a114-410a-bfd9-8f2cf9ac64a6"
+      }
+    },
+    "owner": "zerowolfcode"
   }
 }

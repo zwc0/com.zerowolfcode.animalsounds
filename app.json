@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "com.zerowolfcode.animalsounds",
+    "name": "com.zerowolfcode.animalsounds2",
     "slug": "animalsounds",
     "version": "2.0.0",
     "orientation": "portrait",
@@ -24,7 +24,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.zerowolfcode.animalsounds"
+      "package": "com.zerowolfcode.animalsounds2"
     },
     "web": {
       "bundler": "metro",
@@ -42,7 +42,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "34991bc9-a114-410a-bfd9-8f2cf9ac64a6"
+        "projectId": "47dca062-0c77-4037-a003-ff92a359c6be"
       }
     },
     "owner": "zerowolfcode"

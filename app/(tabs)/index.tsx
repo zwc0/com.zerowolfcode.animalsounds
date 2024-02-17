@@ -51,7 +51,6 @@ export default function TabOneScreen() {
             />
           ))
         }
-        <Text>More coming soon!</Text>
       </View>
     </ScrollView>
   );

@@ -4,5 +4,4 @@
 v21.6.1
 
 ## Build
-npx expo prebuild
-npx react-native build-android --mode=release
+eas build --platform android --profile preview
